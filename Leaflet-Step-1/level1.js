@@ -71,16 +71,6 @@ function createMap(earthquakes) {
     accessToken: API_KEY
   })
 
-  // Define a baseMaps object to hold our base layers
-  // const baseMaps = {
-  //   "Dark Map": darkMap
-  // };
-
-   // Create overlay object to hold our overlay layer
-  //  var overlayMaps = {
-  //   "Earthquakes": earthquakes
-  // };
-
    // Create a map object
    const myMap = L.map("map", {
     center: [0, 0],
@@ -88,10 +78,34 @@ function createMap(earthquakes) {
     layers: [darkMap,earthquakes]
   });
 
-  // Create a layer control
-  // Pass in our baseMaps and overlayMaps
-  // Add the layer control to the map
-  // L.control.layers(baseMaps, overlayMaps, {
-  //   collapsed: true
-  // }).addTo(myMap);
+  //Setup Legend
+  function getColor(d) {
+    return d > 1000  ? '#b63a00' :
+           d > 750   ? '#de5e21' :
+           d > 500   ? '#f49a70' :
+           d > 250   ? '#f6d2af' :
+                       '#f7f2ed';
+  }
+
+  const legend = L.control({position: 'bottomright'});
+
+  legend.onAdd = function () {
+
+      const div = L.DomUtil.create('div', 'info legend'),
+          sigrange = [0, 250, 500, 750, 1000],
+          labels = [];
+      
+      div.innerHTML += '<h4>EQ Significance</h4><hr>';
+      // loop through our eq sig intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < sigrange.length; i++) {
+          div.innerHTML +=
+              '<i style="background:' + getColor(sigrange[i] + 1) + '"></i> ' +
+              sigrange[i] + (sigrange[i + 1] ? '&ndash;' + sigrange[i + 1] + '<br><br>' : '+');
+      }
+          
+      return div;    
+  };
+
+  legend.addTo(myMap);
+
 }
