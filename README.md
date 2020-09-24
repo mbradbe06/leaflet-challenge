@@ -43,6 +43,5 @@ Earthquakes can trigger landslides, fires, floods or tsunamis.
 -------------------
 Even the strongest buildings may not survive a bad earthquake, but architecture plays a huge role in what and who survives a quake.
 
-#### Mapbox API
-------------------
+#### Mapbox API Consideration:
 A mapbox API key is needed to render the map and will need to be edited into the config.js file.
