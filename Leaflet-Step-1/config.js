@@ -1,1 +1,1 @@
-const API_KEY = "MAPBOX KEY HERE";
+const API_KEY = 'YOUR KEY HERE'
