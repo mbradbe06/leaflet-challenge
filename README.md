@@ -3,13 +3,14 @@ Homework #14
 
 # USGS Earthquake Map
 
-This applications is a Leaflet map that plots all earthquakes tracked by the USGS from the last 30 days with a magnitude of 1 or greater by their longitude and latitude.  Earthquakes with higher magnitudes appear larger and those with higher significance appear darker in color.
+This applications is a Leaflet map that plots all earthquakes tracked by the USGS from the last 30 days with a magnitude of 1 or greater by their longitude and latitude.  Earthquakes with higher magnitudes appear larger and those with higher significance appear darker in color.  Clicking on an earthquake marker will yield a tooltip with more detailed information on the its location, magnitude, etc.
 
 ![alt text](https://github.com/mbradbe06/leaflet-challenge/blob/master/Leaflet-Step-1/pictures/leafletss1.jpg "Earthquake Map")
 
 -------------------------------------------------------------------------------------------------------------------------------
 
 A legend for Earthquake significance is also provided and can be found in the lower right corner of the visual - it looks like this:
+
 ![alt text](https://github.com/mbradbe06/leaflet-challenge/blob/master/Leaflet-Step-1/pictures/leafletss2.jpg "Significance Legend")
 
 ## Significance Factors:
